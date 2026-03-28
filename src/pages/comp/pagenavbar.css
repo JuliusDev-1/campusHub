@@ -1,0 +1,85 @@
+img{
+    -webkit-tap-highlight-color: transparent;
+    
+}
+.navbar{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    height: 73px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1px;
+    position: fixed;
+    bottom: 20px;
+    left: 25px;
+    right: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+
+
+.icon{
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 30px;
+    transition: background-color 0.4s;
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.icon:hover{
+    background-color: rgb(210, 208, 208);
+}
+
+.shop-icon{
+    background-color: rgb(230, 223, 231);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 20px;
+    padding: 17px;
+    
+
+}
+
+.svg{
+    color: rgb(75, 75, 75);
+    width: 19px;
+}
+
+
+
+@media(min-width: 550px){
+    .navbar{
+        width: 15px;
+        height: 90vh;
+        border-radius: 0;
+        flex-direction: column;
+        position: fixed;
+        top:50px;
+        left: 0;
+        box-shadow: none;
+        background-color: none;
+    }
+    
+    .icon, .shop-icon{
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    padding: 5px 20px 0px 20px;
+    border-radius: 5px;
+    }
+    .shop-icon{
+    background-color: white;
+    
+
+}
+
+    
+}
+.active{
+    background-color: rgb(239, 237, 237);
+}

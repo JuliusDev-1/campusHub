@@ -1,0 +1,250 @@
+.homePage-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 10px;
+    height: 35px;
+    background-color: #ffffff;
+    border: none;
+    z-index: 10;
+}
+.homePage-nav .logo{
+    font-family: 'Satoshi', sans-serif;
+    font-family: 'Rosaline', cursive;
+    font-size: 25px;
+    font-weight: 30px;
+    cursor: pointer;
+}
+.homePage-nav .search-btn{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.feed-container{
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.feed-container::-webkit-scrollbar{
+    display: none;
+}
+
+.status-container{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 8px;
+    padding-inline: 10px;
+    border: none;
+}
+.status-container::-webkit-scrollbar{
+    display: none;
+}
+
+
+.status{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: rgb(70, 70, 70);
+    font-family: 'Spline Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+.status-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 5rem;
+    border: 3px solid rgb(122, 174, 242);
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+.status img{
+    width: 3.6rem;
+    height: 75px;
+    border-radius: 50px;
+}
+@media(min-width: 550px){
+    
+    .status-container{
+        position: absolute;
+        top: 50px;
+        justify-content: center;
+        width: 110vh;
+        
+    }
+    .feed-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .add-status{
+    margin-left: 300px;
+    }
+
+    
+}
+
+
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 5rem;
+    border: 3px solid rgb(232, 232, 232);
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+.add img{
+    width: 30px;
+}
+
+
+
+.post-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 130px;
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: rgb(99, 99, 99);
+    font-family: 'Spline Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    width: 375px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 15px;
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.post-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.left-header{
+    display: flex;
+    align-items: center;
+}
+.profile img{
+    width: 2.5rem;
+    margin: 8px 10px 10px 8px;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.post-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2px;
+    cursor: pointer;
+}
+.username-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+   
+}
+.user-name{
+    color: black;
+    font-size: 17px;
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+
+.right-header{
+    margin-right: 10px;
+}
+.right-header img{
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.post-file{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px 10px 10px;
+    height: 270px;
+    cursor: pointer;
+}
+.post-file img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.post-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 10px 10px;
+    cursor: pointer;
+}
+.left-btns{
+    display: flex;
+    align-items: center;
+
+}
+.left-btns span{
+    padding: 0px 4px;
+}
+.left-btn-icons{
+    color: rgb(165, 165, 165);
+    width: 20px;
+    cursor: pointer;
+}
+.post-btns button{
+    background-color: #e7e7e7;
+    color: rgb(122, 174, 242);
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.post-discription{
+    margin: 5px 10px 50px 10px ;
+    font-size: 15px;
+    cursor: pointer;
+}
+.post-discription span{
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+

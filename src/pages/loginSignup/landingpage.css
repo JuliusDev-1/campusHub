@@ -1,0 +1,108 @@
+body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.page{
+    min-height: 100vh;
+    background-image: url(../../assets/pexels-palomaclaricefotografia-12887817.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+.blur{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/***HEADER-STYLES***/
+
+header{
+    position: fixed;
+    height: 40px;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+/**logo styles**/
+.logo{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    height: 65px;
+}
+.logo p{
+    color: rgb(255, 255, 255);
+    font-family: 'Satoshi', sans-serif;
+    font-family: 'Rosaline', cursive;
+    font-size: 28px;
+    font-weight: 300;
+
+}
+
+/**SECTION PAGE-CONTENT**/
+
+.page-content{
+    margin-top: 200px ;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    
+}
+.page-content button{
+    color: rgb(236, 148, 236);
+    font-family: "Roboto Mono", monospace;
+    font-size: large;
+    font-weight: 500;
+    background-color: rgb(242, 231, 242);
+    border: 2px solid rgb(242, 231, 242);
+    padding: 20px 50px;
+    border-radius: 30px;
+    transition: border 0.8s;
+}
+.page-content button:hover{
+    border: 2px solid rgb(241, 190, 241) ;
+}
+.page-content button:active{
+    color: rgb(255, 185, 255);
+}
+
+.page-content h1{
+    color: rgb(255, 255, 255);
+    font-family: 'Telma', cursive;
+    font-weight: 500;
+    font-size: 47px;
+}
+.page-content h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(243, 226, 203);
+}
