@@ -9,12 +9,14 @@ import ChangePassword from './pages/loginSignup/changepassword';
 
 function App() {
 
+  
+
   return (
      <BrowserRouter>
       <Routes>
         <Route path='/' element={<LandingPage />}/>
         <Route path='/login-signup' element={<LoginSignup />}/>
-        <Route path ='/main-app' element={<MainApp />}/>
+        <Route path ='/main-app/*' element={<MainApp />}/>
         <Route path ='/forgot-password' element={<PasswordRetrieval />}/>
         <Route path ='/change-password' element={<ChangePassword />}/>
       </Routes>

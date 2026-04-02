@@ -1,80 +1,31 @@
 import './pagenavbar.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import chat_icon from '../../assets/chat.svg';
-import plus_icon from '../../assets/plus.svg';
-import user_icon from '../../assets/user.svg';
-import { UilStore } from '@iconscout/react-unicons'
-import { UilFilm } from '@iconscout/react-unicons'
-import { UilUsersAlt } from '@iconscout/react-unicons'
-import { UilEstate } from '@iconscout/react-unicons'
-import { UilCommentAltDots } from '@iconscout/react-unicons'
-import { UilUser } from '@iconscout/react-unicons'
-
+import { useNavigate, useLocation } from 'react-router-dom';
+import { UilStore, UilUsersAlt, UilEstate, UilCommentAltDots, UilUser } from '@iconscout/react-unicons';
 
 function PageNavBar() {
-    const[homePage, setHomePage] = useState(true);
-    const[friendsFeed, setFriendsFeed] = useState(false);
-    const[marketPage, setMarketPage] = useState(false);
-    const[chatPage, setChatPage] = useState(false);
-    const[userProfilePage, setUserProfilePage] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    // This makes the icon glow if the URL matches the path
+    const isActive = (path) => location.pathname === path;
 
-    return(
+    return (
         <div className='navbar'>
-            <div className={homePage === true ? 'icon home-icon active' : 'icon home-icon' }
-            onClick={() => {
-                setHomePage(true);
-                setFriendsFeed(false);
-                setMarketPage(false);
-                setChatPage(false);
-                setUserProfilePage(false);
-                        }}
-            ><UilEstate className="svg"/></div>
-
-            <div className={friendsFeed === true ? 'icon chat-icon active' : 'icon chat-icon' }
-            onClick={() => {
-                setFriendsFeed(true);
-                setHomePage(false);
-                setMarketPage(false);
-                setChatPage(false);
-                setUserProfilePage(false);
-                        }}
-            ><UilUsersAlt className= "svg"/></div>
-
-            <div className={marketPage === true ? 'icon shop-icon active' : 'icon shop-icon' }
-            onClick={() => {
-                setMarketPage(true);
-                setHomePage(false);
-                setFriendsFeed(false);
-                setChatPage(false);
-                setUserProfilePage(false);
-                        }}
-            > <UilStore className= "shop-svg" /> </div>
-
-            <div className={chatPage === true ? 'icon bell-icon active' : 'icon bell-icon' }
-            onClick={() => {
-                setChatPage(true)
-                setHomePage(false)
-                setFriendsFeed(false)
-                setMarketPage(false)
-                setUserProfilePage(false)
-                        }}
-            ><UilCommentAltDots className= "svg" /></div>
-
-            <div className={userProfilePage === true ? 'icon user-icon active' : 'icon user-icon' }
-            onClick={() => {
-                setUserProfilePage(true);
-                setHomePage(false);
-                setFriendsFeed(false);
-                setMarketPage(false);
-                setChatPage(false);
-                
-                        }}
-            ><UilUser className= "svg" /></div>
+            <div className={isActive('/main-app') ? 'icon active' : 'icon'} 
+                 onClick={() => navigate('/main-app')}><UilEstate /></div>
+            
+            <div className={isActive('/main-app/friends-feed') ? 'icon active' : 'icon'} 
+                 onClick={() => navigate('/main-app/friends-feed')}><UilUsersAlt /></div>
+            
+            <div className={isActive('/main-app/marketplace') ? 'icon shop-icon active' : 'shop-icon icon'} 
+                 onClick={() => navigate('/main-app/marketplace')}><UilStore /></div>
+            
+            <div className={isActive('/main-app/messages') ? 'icon active' : 'icon'} 
+                 onClick={() => navigate('/main-app/messages')}><UilCommentAltDots /></div>
+            
+            <div className={isActive('/main-app/user-profile') ? 'icon active' : 'icon'} 
+                 onClick={() => navigate('/main-app/user-profile')}><UilUser /></div>
         </div>
-        
-    )
-
+    );
 }
 export default PageNavBar;
