@@ -1,0 +1,105 @@
+.story-container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: rgb(38, 38, 38);
+    z-index: 20;
+    top: 0;
+    
+}
+.progress-container {
+    width: 95%;
+    padding-top: 10px;
+    z-index: 30; /* Ensure it stays above the profile */
+}
+
+.progress-bar-bg {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #fff;
+    width: 0%;
+    /* This matches your story duration */
+    animation: fillProgress 5s linear forwards;
+}
+
+@keyframes fillProgress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+.user-story-profile{
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-story-profile .left{
+    display: flex;
+    align-items: center;
+   
+}
+.user-story-profile img{
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50px;
+}
+.user-story-profile .user-info{
+    margin-left: 10px;
+    font-family: 'Spline Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 1px;
+}
+.user-story-profile .user-info .username{
+    font-size: 23px;
+}
+.user-story-profile .user-info .timestamp{
+    font-size: 14px;
+    color: rgb(221, 221, 221);
+}
+
+.story-content{
+    background-color: pink;
+    width: 50vh;
+    height: 90vh;
+}
+.story-nav{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 40px;
+    width: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.story-nav .current-story{
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background-color: rgb(223, 220, 220);
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.story-nav .active{
+    transition: hieght 1.3s;
+    height: 17px;
+    width: 10px;
+}

@@ -17,7 +17,7 @@ import story5 from "../../assets/images/story-5.jpg";
 import story6 from "../../assets/images/story-6.jpg";
 // ... (Keep all your other story imports here)
 
-function HomeFeed({ posts, onToggleLike, onAddComment }) {
+function HomeFeed({ posts, onToggleLike, onStatusClick ,onAddComment, statusData, onViewStatus }) {
   const [accessComment, setAccessComment] = useState(false);
   const [activePostId, setActivePostId] = useState(null);
 
@@ -39,17 +39,26 @@ function HomeFeed({ posts, onToggleLike, onAddComment }) {
                 <div className="status-container">
                     <div className="status add-status">
                         <div className="status-image add">
-                            <img src={plus_icon} alt="Add Status" />
+                            <img src={plus_icon} alt="Add Status"  />
                         </div>
                         <div>Create</div>
                     </div>
                     {/* You can map these later too, but static is fine for now */}
-                    <Status name={"helen"} story={story1} />
-                    <Status name={"jane"} story={story2} /> 
-                    <Status name={"mary"} story={story3} />
-                    <Status name={"john"} story={story4} />
-                    <Status name={"alice"} story={story5} />
-                    <Status name={"bob"} story={story6} />
+                    {[...statusData]
+                    .sort((a, b) => {
+                      if (a.viewed === b.viewed) return 0; 
+                      return a.viewed ? 1 : -1; // Viewed (true) goes to end, Unviewed (false) goes to front
+                    })
+                    .map((item) => (
+                      <Status 
+                        key={item.id} 
+                        name={item.name} 
+                        story={item.story} 
+                        viewed={item.viewed}
+                        onPress={() => onStatusClick(item)} 
+                      />
+                    ))
+                  }
                 </div>
 
       <div className="post-cards">

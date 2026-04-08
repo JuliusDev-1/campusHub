@@ -9,6 +9,7 @@ import MessagesPage from "./feeds/messagespage";
 import UserProfile from "./feeds/userprofileacct";
 import SearchPage from "./feeds/searchpage";
 import NotificationPage from "./feeds/notificationpage"; 
+import ViewStory from "./popUps/viewstory";
 import story1 from "../assets/images/story-1.jpg"
 import story2 from "../assets/images/story-2.jpg"
 import story3 from "../assets/images/story-3.jpg"
@@ -41,6 +42,141 @@ function MainApp() {
     if (!user) navigate("/login-signup");
   }, [navigate]);
 
+
+
+
+
+  // STATE FOR STORIES/STATUS
+const [activeUser, setActiveUser] = useState(null);
+const [showViewer, setShowViewer] = useState(false);
+
+const handleStatusClick = (item) => {
+  setActiveUser(item); 
+  setShowViewer(true); 
+};
+
+
+  const [statusData, setStatusData] = useState([
+  { id: 1,
+     name: "helen",
+     story: story1,
+     viewed: true,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+     },
+
+  { id: 2,
+     name: "jane",
+     story: story2,
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+      },
+
+  { id: 3,
+     name: "mary",
+     story: story3,
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+      },
+
+  { id: 4,
+     name: "john",
+     story: story4,
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+      },
+
+  { id: 5,
+     name: "alice", 
+     story: story5, 
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+     },
+
+  { id: 6,
+     name: "bob", 
+     story: story6, 
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+    },
+
+  { id: 7,
+     name: "charlie", 
+     story: story1, 
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+    },
+
+  { id: 8,
+     name: "dave",
+     story: story2,
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+      },
+
+  { id: 9,
+     name: "eve", 
+     story: story3, 
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+    },
+
+  { id: 10,
+     name: "frank", 
+     story: story4, 
+     viewed: false,
+     stories: [
+      { id: "h1", image: story2, timestamp: "2h ago" },
+      { id: "h2", image: story1, timestamp: "1h ago" },
+      { id: "h3", image: story3, timestamp: "30m ago" }
+    ]
+     },
+]);
+
+// The function to flip 'viewed' to true
+const handleViewStatus = (clickedId) => {
+  setStatusData(oldList => oldList.map(eachPerson => 
+    eachPerson.id === clickedId ? { ...eachPerson, viewed: true } : eachPerson
+  ));
+};
+
+
+
   // THE BANK: State for posts, each with its own nested comments array
   const [postsData, setPostsData] = useState([
     { 
@@ -66,6 +202,10 @@ function MainApp() {
     }
   ]);
 
+
+
+
+
   // THE TELLER (Likes): Logic to update like status
   const handleToggleLike = (postId) => {
     setPostsData(prev => prev.map(post => 
@@ -77,7 +217,6 @@ function MainApp() {
     ));
   };
 
-  // THE TELLER (Comments): Logic to add a new comment to a specific post
   const handleAddComment = (postId, text) => {
     setPostsData(prev => prev.map(post => {
       if (post.id === postId) {
@@ -99,10 +238,28 @@ function MainApp() {
 
   return (
     <>
-     
-       <Routes>
-          {/* This is the magic line - it makes Home the default */}
-         <Route index element={<HomeFeed posts={postsData} onToggleLike={handleToggleLike} onAddComment={handleAddComment}/>} />
+      {showViewer && activeUser && (
+        <ViewStory 
+          name={activeUser.name}
+          profilePic={activeUser.story}
+          timestamp={activeUser.stories[0]?.timestamp}
+          stories={activeUser.stories}
+          onClose={() =>{ 
+            handleViewStatus(activeUser.id);
+            setShowViewer(false)}}
+        />
+      )}
+      <Routes>
+          {/* This line makes Home the default */}
+        <Route index element={
+          <HomeFeed 
+            posts={postsData} 
+            statusData={statusData} 
+            onStatusClick={handleStatusClick} 
+            onToggleLike={handleToggleLike} 
+            onAddComment={handleAddComment} 
+          />
+      } />
   
           <Route path="friends-feed" element={<FriendsFeed />} />
           <Route path="messages" element={<MessagesPage />} />
@@ -112,7 +269,9 @@ function MainApp() {
           <Route path="notifications" element={<NotificationPage />} />
       </Routes>
 
+      
       <PageNavBar />
+      
     </>
   );
 }
