@@ -53,8 +53,11 @@
    
 }
 .user-story-profile img{
-    width: 6vh;
-    height: 6vh;
+    width: 25px;          /* Or whatever size you prefer */
+    height: 25px;
+    border-radius: 50%;   /* Keeps it circular */
+    object-fit: cover;    /* Prevents the image inside from stretching */
+    flex-shrink: 0;
     border-radius: 50px;
 }
 .user-story-profile .user-info{

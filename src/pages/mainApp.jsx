@@ -60,7 +60,7 @@ const handleStatusClick = (item) => {
   { id: 1,
      name: "helen",
      story: story1,
-     viewed: true,
+     viewed: false,
      stories: [
       { id: "h1", image: story2, timestamp: "2h ago" },
       { id: "h2", image: story1, timestamp: "1h ago" },

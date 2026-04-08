@@ -22,7 +22,9 @@ function ViewStory({ name, stories, timestamp, onClose, onNext, onPrev, profileP
                     </div>
                 </div>
                 <div className="right">
-                    <UilTimes className="story-icon" />
+                    <UilTimes className="story-icon"
+                        onClick={onClose}
+                     />
                 </div>
             </div>
              <div className="story-content">
