@@ -12,19 +12,19 @@ function PageNavBar() {
     return (
         <div className='navbar'>
             <div className={isActive('/main-app') ? 'icon active' : 'icon'} 
-                 onClick={() => navigate('/main-app')}><UilEstate /></div>
+                 onClick={() => navigate('/main-app')}><UilEstate className="svg"/></div>
             
             <div className={isActive('/main-app/friends-feed') ? 'icon active' : 'icon'} 
-                 onClick={() => navigate('/main-app/friends-feed')}><UilUsersAlt /></div>
+                 onClick={() => navigate('/main-app/friends-feed')}><UilUsersAlt className="svg"/></div>
             
             <div className={isActive('/main-app/marketplace') ? 'icon shop-icon active' : 'shop-icon icon'} 
-                 onClick={() => navigate('/main-app/marketplace')}><UilStore /></div>
+                 onClick={() => navigate('/main-app/marketplace')}><UilStore className="svg"/></div>
             
             <div className={isActive('/main-app/messages') ? 'icon active' : 'icon'} 
-                 onClick={() => navigate('/main-app/messages')}><UilCommentAltDots /></div>
+                 onClick={() => navigate('/main-app/messages')}><UilCommentAltDots className="svg"/></div>
             
             <div className={isActive('/main-app/user-profile') ? 'icon active' : 'icon'} 
-                 onClick={() => navigate('/main-app/user-profile')}><UilUser /></div>
+                 onClick={() => navigate('/main-app/user-profile')}><UilUser className="svg"/></div>
         </div>
     );
 }

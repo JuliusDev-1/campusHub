@@ -1,6 +1,7 @@
 import './viewstory.css'
 import profile1 from "../../assets/images/profile-1.jpg"
 import { UilHeart, UilMessage, UilTimes } from '@iconscout/react-unicons';
+import post1 from "../../assets/images/story-5.jpg"
 
 function ViewStory({ name, stories, timestamp, onClose, onNext, onPrev, profilePic }) {
 
@@ -28,7 +29,7 @@ function ViewStory({ name, stories, timestamp, onClose, onNext, onPrev, profileP
                 </div>
             </div>
              <div className="story-content">
-                
+                <img src={post1} alt="" />
              </div>
              <div className="story-nav">
                     <div className="current-story active"></div>

@@ -15,7 +15,7 @@
 .progress-container {
     width: 95%;
     padding-top: 10px;
-    z-index: 30; /* Ensure it stays above the profile */
+    z-index: 30;
 }
 
 .progress-bar-bg {
@@ -29,7 +29,6 @@
     height: 100%;
     background: #fff;
     width: 0%;
-    /* This matches your story duration */
     animation: fillProgress 5s linear forwards;
 }
 
@@ -38,12 +37,15 @@
     to { width: 100%; }
 }
 .user-story-profile{
+    position: absolute;
+    top: 15px;
     color: white;
     display: flex;
     align-items: center;
     height: 50px;
     width: 100%;
     display: flex;
+    background-color: none;
     align-items: center;
     justify-content: space-between;
 }
@@ -53,10 +55,10 @@
    
 }
 .user-story-profile img{
-    width: 25px;          /* Or whatever size you prefer */
+    width: 25px;         
     height: 25px;
-    border-radius: 50%;   /* Keeps it circular */
-    object-fit: cover;    /* Prevents the image inside from stretching */
+    border-radius: 50%;   
+    object-fit: cover;  
     flex-shrink: 0;
     border-radius: 50px;
 }
@@ -78,13 +80,19 @@
 }
 
 .story-content{
-    background-color: pink;
+    
     width: 50vh;
     height: 90vh;
+    margin-top: 16px;
+}
+.story-content img{
+    width: 50vh;
+    height: 90vh;
+   object-fit: cover;
 }
 .story-nav{
     width: 100px;
-    height: 30px;
+    height: 5px;
     margin-bottom: 40px;
     width: 50vh;
     display: flex;
