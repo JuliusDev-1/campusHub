@@ -52,6 +52,11 @@
 .user-story-profile .left{
     display: flex;
     align-items: center;
+    margin-left: 15px;
+   
+}
+.user-story-profile .right{
+    margin-right: 15px;
    
 }
 .user-story-profile img{
@@ -80,14 +85,13 @@
 }
 
 .story-content{
-    
     width: 50vh;
     height: 90vh;
     margin-top: 16px;
 }
 .story-content img{
     width: 50vh;
-    height: 90vh;
+    height: 100%;
    object-fit: cover;
 }
 .story-nav{

@@ -1,0 +1,77 @@
+
+.user-profile-container{
+     position: fixed;
+    top: 140px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+.user-profile-container .user-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 110px;
+    height: 110px;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    background-color: rgb(236, 236, 236);
+}
+.user-profile-container .user-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Spline Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.user-name .display-name{
+    font-size: 20px;
+    color: rgb(87, 87, 87)  ;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Zodiak', serif;
+}
+.user-name .acct-name{
+    font-size: 13px;
+    color: rgb(127, 127, 127)  ;
+}
+.user-name .bio{
+    font-size: 14px;
+    width: 350px;
+    color: rgb(101, 101, 101)  ;
+    margin-top: 9px;
+}
+
+.user-profile-background{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: pink;
+
+}
+.user-profile-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.user-profile-nav .right,.user-profile-nav .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+}
