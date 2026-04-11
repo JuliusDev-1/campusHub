@@ -114,20 +114,14 @@
 
 .user-acct-feed {
     position: relative;
-    margin-top: 460px;
+    margin-top: 470px;
     width: 100%;
     height: 2000px;
     background-color: #f3f3f3;
     border-top: 1px solid #eee;
     font-family: 'Spline Sans', sans-serif;
     font-family: 'Quicksand', sans-serif;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.29);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(13.3px);
-    -webkit-backdrop-filter: blur(13.3px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+   background-color: rgb(255, 255, 255)S;
 }
 
 .acct-feed-lable {
@@ -154,6 +148,7 @@
     font-weight: 600;
     color: #b9b9b9;
     padding-bottom: 8px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .lable-underline {
