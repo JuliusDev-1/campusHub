@@ -71,6 +71,13 @@ function UserProfile() {
                         <div className={ activeTab === "reposts" ?'lable-underline active-lable-underline' : 'lable-underline'}></div>
                     </div>
                 </div>
+                <div className="acct-feed-content">
+                        <div className="posts"></div>
+                        <div className="posts"></div>
+                        <div className="posts"></div>
+                        <div className="posts"></div>
+                        <div className="posts"></div>
+                </div>
             </div> 
         </>
     )

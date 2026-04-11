@@ -114,14 +114,14 @@
 
 .user-acct-feed {
     position: relative;
+    display: block;
     margin-top: 470px;
+    height: 100%;
     width: 100%;
-    height: 2000px;
-    background-color: #f3f3f3;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #ffffff;
     font-family: 'Spline Sans', sans-serif;
     font-family: 'Quicksand', sans-serif;
-   background-color: rgb(255, 255, 255)S;
+   background-color: rgb(255, 255, 255);
 }
 
 .acct-feed-lable {
@@ -134,6 +134,7 @@
     justify-content: space-around;
     width: 100%;
     padding-top: 15px;
+    background-color: #ffffff;
 }
 
 .acct-feed-lable > div {
@@ -165,4 +166,17 @@
 
 .active-lable-underline {
     background-color: #4b4b4b;
+}
+
+.acct-feed-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    justify-content: center;
+    margin:16px 5px;
+}
+.acct-feed-content .posts{
+    background-color: lightpink;
+    height: 20rem;
+    border-radius: 20px;
 }
