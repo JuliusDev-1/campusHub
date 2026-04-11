@@ -29,13 +29,7 @@ function ViewStory({ name, stories, timestamp, onClose, onNext, onPrev, profileP
                 </div>
             </div>
              <div className="story-content">
-                <img src={post1} alt="" />
-             </div>
-             <div className="story-nav">
-                    <div className="current-story active"></div>
-                    <div className="current-story"></div>
-                    <div className="current-story"></div>
-                    <div className="current-story"></div>
+
              </div>
         </div>
         </>
