@@ -1,15 +1,44 @@
 
+.user-profile-background{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(118, 84, 84);
+
+}
+.user-profile-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+     -webkit-tap-highlight-color: transparent;
+}
+.user-profile-nav .right,.user-profile-nav .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+     -webkit-tap-highlight-color: transparent;
+}
 .user-profile-container{
-     position: fixed;
+    position: fixed;
     top: 140px;
     left: 10px;
+    right: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    right: 10px;
-    border-radius: 10px;
-    z-index: 10;
+    z-index: 0;
+    -webkit-tap-highlight-color: transparent;
+   
 }
 .user-profile-container .user-profile{
     display: flex;
@@ -21,6 +50,13 @@
     border: 4px solid rgb(255, 255, 255);
     border-radius: 50%;
     background-color: rgb(236, 236, 236);
+    -webkit-tap-highlight-color: transparent;
+}
+.user-profile-container .user-profile img{
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    -webkit-tap-highlight-color: transparent;
 }
 .user-profile-container .user-name{
     display: flex;
@@ -49,29 +85,89 @@
     margin-top: 9px;
 }
 
-.user-profile-background{
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    height: 200px;
-    border-radius: 10px;
-    background-color: pink;
+.account-follows{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+.seporator{
+    background-color: rgb(199, 199, 199);
+    width: 2px;
+    height: 30px;
+    margin-inline: 40px;
+}
+.user-followers, .user-followings{
+    display: flex;
+    flex-direction: column;
+}
+.number-follows{
+    font-size: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Zodiak', serif;
+}
+.account-follows .label{
+    font-size: 14px;
+    color: rgb(131, 131, 131);
+}
 
+
+.user-acct-feed {
+    position: relative;
+    margin-top: 460px;
+    width: 100%;
+    height: 2000px;
+    background-color: #f3f3f3;
+    border-top: 1px solid #eee;
+    font-family: 'Spline Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.29);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.3px);
+    -webkit-backdrop-filter: blur(13.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.user-profile-nav{
+
+.acct-feed-lable {
+     -webkit-tap-highlight-color: transparent;
     display: flex;
+    position: sticky;
+    top: 0;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin: 10px;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 15px;
 }
-.user-profile-nav .right,.user-profile-nav .left{
+
+.acct-feed-lable > div {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
     cursor: pointer;
-    border-radius: 50px;
-    background-color: rgb(255, 255, 255);
+    flex: 1; 
+}
+
+.lable-name {
+    font-weight: 600;
+    color: #b9b9b9;
+    padding-bottom: 8px;
+}
+
+.lable-underline {
+    width: 120px; 
+    height: 1px;
+    background-color: rgb(159, 159, 159); 
+    border-radius: 10px;
+}
+
+.active-lable-name {
+    color: #656565; 
+    font-size: 17px;
+}
+
+.active-lable-underline {
+    background-color: #4b4b4b;
 }
